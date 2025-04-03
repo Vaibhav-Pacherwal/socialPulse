@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Pulse</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="images/DALL·E 2025-03-29 12.38.06 - A minimalistic green logo featuring a smiley face made of leaves. The background should be a soft, natural green shade, and the facial features should.webp">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Neucha&family=Patrick+Hand&family=Permanent+Marker&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="content">
+            <div class="sp">
+                <img src="images/DALL·E 2025-03-29 12.38.06 - A minimalistic green logo featuring a smiley face made of leaves. The background should be a soft, natural green shade, and the facial features should.webp" alt="socialPulse" height="65%" width="35%" style="border-radius: 50%;">
+                <h1 style="color: white;">Social Pulse</h1>
+            </div>
+            <div class="platform">
+                <button id="pf1">
+                    <img src="images/X-logo.jpeg" alt="X" height="88%" width="15%" style="border-radius: 12px 12px 12px 12px; margin-left: 2%;">
+                    <p style="background-color: white; font-size: 22px;">Twitter</p>
+                </button>
+                <button id="pf2">
+                    <img src="images/github-logo.png" alt="X" height="88%" width="15%" style="border-radius: 12px 12px 12px 12px; border: none; margin-left: 2%;">
+                    <p style="background-color: white; font-size: 22px;">GitHub</p>
+                </button>
+                <button id="pf3">
+                    <img src="images/linkedin-logo.png" alt="X" height="88%" width="15%" style="border-radius: 12px 12px 12px 12px; margin-left: 2%;">
+                    <p style="background-color: white; font-size: 22px;">LinkedIn</p>
+                </button>
+                <button id="pf4">
+                    <img src="images/insta-logo (2).png" alt="X" height="88%" width="15%" style="border-radius: 12px 12px 12px 12px; border: none; margin-left: 2%;">
+                    <p style="background-color: white; font-size: 22px;">Instagram</p>
+                </button>
+            </div>
+        </div>
+        <div class="twitter">
+            <img src="images/X-logo.jpeg" alt="twitter-logo" height="22%" width="16%" style="border-radius: 12px 12px 12px 12px;">
+            <form action="/twitter">
+                <input type="text" placeholder=" Enter Username" name="user">
+                <button>Search</button>
+            </form>
+            <img src="images/close.png" alt="close" id="closeT" height="21px" width="21px" style="top: 1.5%; right: 1.5%; position: absolute; cursor: pointer;">
+        </div>
+        <div class="github">
+            <img src="images/github-logo.png" alt="git-logo" height="25%" width="19%" style="border-radius: 12px 12px 12px 12px; ">
+            <form action="http://localhost:8080/github" method="get">
+                <input type="text" placeholder=" Enter Username" name="user">
+                <button style="background-color: #00800a; color: white;">Search</button>
+            </form>
+            <img src="images/close.png" alt="close" id="closeG" height="21px" width="21px" style="top: 1.5%; right: 1.5%; position: absolute; cursor: pointer;">
+        </div>
+        <div class="LinkedIn">
+            <img src="images/linkedin-logo.png" alt="linkedin-logo" height="23%" width="17%" style="border-radius: 12px 12px 12px 12px; ">
+            <form action="/linkedin">
+                <input type="text" placeholder=" Enter Username" name="user">
+                <button style="background-color: #0A66C2; color: white;">Search</button>
+            </form>
+            <img src="images/close.png" alt="close" id="closeL" height="21px" width="21px" style="top: 1.5%; right: 1.5%; position: absolute; cursor: pointer;">
+        </div>
+        <div class="instagram">
+            <img src="images/insta-logo (2).png" alt="linkedin-logo" height="23%" width="17%" style="border-radius: 12px 12px 12px 12px; ">
+            <form action="/instagram">
+                <input type="text" placeholder=" Enter Username" name="user">
+                <button style="background-color: #24A0ED; color: white;">Search</button>
+            </form>
+            <img src="images/close.png" alt="close" id="closeI" height="21px" width="21px" style="top: 1.5%; right: 1.5%; position: absolute; cursor: pointer;">
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

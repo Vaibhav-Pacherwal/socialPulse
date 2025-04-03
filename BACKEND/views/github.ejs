@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= userData.name %></title>
+        <link rel="stylesheet" href="/gitStyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Neucha&family=Patrick+Hand&family=Permanent+Marker&display=swap" rel="stylesheet">
+        <style>
+            .pie {
+                background-image: conic-gradient(
+                    <% let total = 0; %>
+                    <% for (let i = 0; i < colors.length; i++) { %>
+                        <%= colors[i] %> <%= total %>% <%= total + languageUsed[i] %>%
+                        <% total += languageUsed[i]; %>
+                        <% if (i < colors.length - 1) { %>, <% } %>
+                    <% } %>
+                );
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="main">
+            <div class="container1">
+                <img src="<%= userData.avatar_url %>" class="avatara" alt="avatar" height="34%" width="97%" style="border-radius: 20px 20px 20px 20px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); ">
+                <div class="viewHead">
+                    <h1><%= userData.login %></h1>
+                </div>
+                <button class="view" id="view">
+                    <img src="repository.png" alt="user" height="25px" width="25px">
+                    <a href="<%= userRepos[0].html_url %>" id="profileLink" style="text-decoration: none; color: black;"><h2>View Last Repo</h2></a>
+                </button>
+                <button class="view">
+                    <img src="user.png" alt="user" height="25px" width="25px">
+                    <a href="<%= userData.html_url %>" id="profileLink" style="text-decoration: none; color: black;"><h2>View GitHub Profile</h2></a>
+                </button>
+                <button class="view" onclick="copyToClipboard()" style="padding-right: 20px;">
+                    <h2>📋 Copy Link</h2>
+                </button>
+
+                <div class="lastUp">
+                    <h2>Last Updated</h2>
+                    <h3><%= userData.updated_at %></h3>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="counts">
+                    <div class="count">
+                        <h2><%= userData.followers %></h2>
+                        <h2><img src="followers (2).png" alt="followers" height="27px" width="27px"> Followers</h2>
+                    </div>
+                    <div class="count">
+                        <h2><%= userData.following %></h2>
+                        <h2><img src="follow.png" alt="followers" height="25px" width="25px" style="transform: translateY(5px);"> Following</h2>
+                    </div>
+                    <div class="count">
+                        <h2><%= stars %></h2>
+                        <h2><img src="stars (1).png" alt="followers" height="25px" width="25px"> Stars</h2>
+                    </div>
+                    <div class="count">
+                        <h2><%= userRepos.length %></h2>
+                        <h2><img src="folder.png" alt="followers" height="25px" width="25px"> Repositories</h2>
+                    </div>
+                </div>
+                <div class="repos">
+                    <% for(let i = 0; i < userRepos.length; i++) { %>
+                        <div class="repo" title="<%= userRepos[i].description %>">
+                            <div class="hor1">
+                                <div class="hor11">
+                                    <h1><%= userRepos[i].name %></h1>
+                                    <h4 style="padding-right: 20px;"><%= userRepos[i].visibility %></h4>
+                                </div>
+                                <h4><%= userRepos[i].description %></h4>
+                                <div class="hor12">
+                                    <span>
+                                        <img src="period.png" alt="period" height="45px" width="45px">
+                                        <h3><%= userRepos[i].language %></h3>
+                                    </span>
+                                    <span style="gap: 12px;">
+                                        <img src="split-circle.png" alt="period" height="25px" width="25px" style="transform: translateY(10px);">
+                                        <h3><%= userRepos[i].forks_count %></h3>
+                                    </span>
+                                    <span style="gap: 10px;">
+                                        <img src="star.png" alt="period" height="25px" width="25px" style="transform: translateY(10px);">
+                                        <h3 ><%= userRepos[i].stargazers_count %></h3>
+                                    </span>
+                                    <span style="gap: 10px;">
+                                        <img src="eye.png" alt="period" height="25px" width="25px" style="transform: translateY(10px);">
+                                        <h3 ><%= userRepos[i].watchers_count %></h3>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="hor2">
+                                <button class="viewRepo">
+                                    <img src="eye.png" alt="view" height="25px" width="25px">
+                                    <a href="<%= userRepos[i].html_url %>" id="profileLink2" style="text-decoration: none; color: black;"><h2>View Repo</h2></a>
+                                </button>
+                                <button class="viewRepo" onclick="copyToClipboard2('<%= userRepos[i].html_url %>')">
+                                    <img src="url.png" alt="url" height="25px" width="25px">
+                                    <h2>Copy Repo URL</h2>
+                                </button>
+                                <button class="viewRepo" onclick="copyToClipboard3('<%= userRepos[i].html_url %>')">
+                                    <img src="url.png" alt="url" height="25px" width="25px">
+                                    <h2>Copy Clone URL</h2>
+                                </button>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="bio">
+                    <img src="profile.png" alt="profile" height="50px" width="50px">
+                    <h2>About <%= userData.name || userData.login %></h2>
+                    <p><%= userData.bio ? userData.bio : "No bio available" %></p>
+                </div>
+                <div class="main2">
+                    <div class="chart">
+                        <div class="pie"></div>
+                    </div>
+                    <div class="texting" style="display: flex; flex-direction: column;">
+                        <% for(let i = 0; i < languages.length; i++) { %>
+                            <p style="color: <%=colors[i]%>;">
+                                <%= languages[i] %>: <%= languageUsed[i] %>%
+                            </p>
+                        <% } %>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="git.js"></script>
+    </body>
+</html>

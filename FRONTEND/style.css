@@ -1,0 +1,187 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Patrick Hand", cursive;
+    background: linear-gradient(to bottom, #1a3d1a, #0d1f0d);
+    background-color: #2b3a2b;
+    overflow: hidden;
+}
+
+.content {
+    height: 100vh;
+    width: 100%;
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .sp {
+    height: 25%;
+    width: 25%;
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .platform {
+    height: 50%;
+    width: 25%;
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content .platform button {
+    height: 15%;
+    width: 80%;
+    background-color: white;
+    border-radius: 12px 12px 12px 12px;
+    display: flex;
+    gap: 20%;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: "Barriecito", system-ui;
+}
+
+button:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+h1 {
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+    font-family: "Barriecito", system-ui;
+}
+
+.twitter {
+    height: 40%;
+    width: 25%;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 12px 12px 12px 12px;
+    top: 40.5%;
+    left: 37.4%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+    display: none;
+}
+
+.github {
+    height: 40%;
+    width: 25%;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 12px 12px 12px 12px;
+    top: 40.5%;
+    left: 37.4%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+    display: none;
+}
+
+.LinkedIn {
+    height: 40%;
+    width: 25%;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 12px 12px 12px 12px;
+    top: 40.5%;
+    left: 37.4%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+    display: none;
+}
+
+.instagram {
+    height: 40%;
+    width: 25%;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 12px 12px 12px 12px;
+    top: 40.5%;
+    left: 37.4%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+    display: none;
+}
+
+.upPf {
+    opacity: 0;
+}
+
+.tweet {
+    display: flex;
+    transition: 1.5s ease-in-out;
+}
+
+form {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+    transform: translateY(20%);
+    
+}
+
+form input {
+    height: 22%;
+    width: 80%;
+    font-size: 19px;
+    border: 2px solid black;
+    text-align: center;
+    font-family: "Patrick Hand", cursive;
+}
+
+form input::placeholder {
+    text-align: center;
+}
+
+form button {
+    height: 22%;
+    width: 40%;
+    font-size: 21px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 8px 8px 8px 8px;
+    font-family: "Patrick Hand", cursive;
+
+    &:hover {
+        background-color: black;
+        transform: scale(1.05);
+        transition: 0.3s ease-in-out;
+    }
+}
+
+
